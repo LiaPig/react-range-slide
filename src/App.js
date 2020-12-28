@@ -24,7 +24,7 @@ export default function App() {
     }
   }, [end]);
   const [currentProgressPercent, setCurrentProgressPercent] = useState(
-    endPercent - startPercent
+    () => endPercent - startPercent
   );
   const [currentLeftPercent, setCurrentLeftPercent] = useState(0);
 
