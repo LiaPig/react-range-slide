@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# react-range-slide
+
+一个使用 React.js 写的可拖动选择区域范围的小组件。
+
+![](./demo.png)
+
+
+## 收获经验总结
+
+1. 当 `useState` 的初始值需要依赖别的计算值时，使用向它传入函数来优化（延迟初始化），只有第一次渲染组件才会执行。（函数的参数就为原 `state`。`setState(state => state + 1)`）
+2. 使用 `useMemo` 来处理当 `state` 不同值造成不同情况时，返回由此产生的新值。
+3. 要跨越组件周期存储数据且不触发重渲染时，使用 `useRef` 。`useRef` 除了 `dom` 结点，也支持其他数据。
+4. 通过监听事件 `touchstart` 的 `e.tagerTouches[0].pageX` 来获取 `touch` 动作的开始位置的横坐标。
+5. 通过监听事件 `touchmove` 的 `e.tagerTouches[0].pageX` 来获取 `touch` 动作的结束位置的横坐标。
+6. 一次 `touch` 动作移动的距离就为 `动作结束位置 - 动作开始位置`。
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
